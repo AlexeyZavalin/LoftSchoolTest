@@ -41,16 +41,16 @@
 	}
 }
 
-.grid(@name, @current, @count) when (@current < @count + 1) {
+.grid(@name, @current, @amount) when (@current < @amount + 1) {
 	&.@{name}-@{current} {
 		float: left;
-		width: 100%/@count*@current;
+		width: 100%/@amount*@current;
 		position: relative;
 		min-height: 1px;		
 		padding-right: 15px;
 		padding-left: 15px;
 	}
-	.grid(@name, @current + 1, @count);
+	.grid(@name, @current + 1, @amount);
 }
 
 .grid(col, 1, 12);
