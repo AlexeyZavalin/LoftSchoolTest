@@ -1,0 +1,374 @@
+.clearfix() {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.size(@width, @height) {
+	height: @height;
+	width: @width;
+}
+
+.square(@value) {
+	.size(@value, @value);
+}
+
+.container(@width) {
+	width: @width;
+	margin: 0 auto;
+	&:before, &:after {
+		display: table;
+		content: " ";
+	} 
+	&:after {
+		clear: both;
+	}
+}
+
+.row {	
+	margin-right: -15px;
+	margin-left: -15px;
+	&:before, &:after {
+		display: table;
+		content: " ";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.grid(@name, @current, @count) when (@current < @count + 1) {
+	&.@{name}-@{current} {
+		float: left;
+		width: 100%/@count*@current;
+		position: relative;
+		min-height: 1px;		
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.grid(@name, @current + 1, @count);
+}
+
+.grid(col, 1, 12);
+
+.border-radius(@value) {
+	-webkit-border-radius: @value;
+	-moz-border-radius: @value;
+	-ms-border-radius: @value;
+	-o-border-radius: @value;
+	border-radius: @value;
+}
+
+.box-sizing(@value) {
+	-moz-box-sizing: @value;
+	-webkit-box-sizing: @value;
+	box-sizing: @value;
+}
+
+.footer(@value) {
+	.footer {
+		height:@value;
+		margin-top: @value * -1;
+		position: relative;
+	}
+}
+
+.wrapper(@value) {
+	.wrapper {
+		min-height: 100%;
+		position: relative;
+		overflow: hidden;
+		&:after {
+			content: "";
+			display: block;
+			height: @value;
+		}
+	}
+}
+
+@font-face {
+	font-family: FiraSansReg;
+	src: url('../fonts/FiraSans/FiraSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: FiraSansMedium;
+	src: url('../fonts/FiraSans/FiraSans-Medium.ttf');
+}
+
+@font-face {
+	font-family: FiraSansLight;
+	src: url('../fonts/FiraSans/FiraSans-Light.ttf');
+}
+
+@font-face {
+	font-family: FontAwesome;
+	src: url('../fonts/FontAwesome/fontawesome-webfont.ttf');
+}
+
+html {
+	.square(100%);
+}
+
+body {
+	.square(100%);
+}
+
+.container {
+	.container(1200px);
+}
+
+.wrapper(72px);
+
+ul {
+	padding: 0;
+	margin: 0;
+	li {
+		list-style: none;
+	}
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	.box-sizing(border-box);
+}
+
+/*------ Header -------*/
+
+.header {
+	padding: 14px 0;
+	box-shadow: 0 5px 3px 0 rgba(0,0,0,.2);
+	margin-bottom: 70px;
+	.container {
+		padding-left: 29px;
+		padding-right: 29px;
+		.clearfix();
+	}
+	background: #8cc34b;
+	.info {
+		width: 50%;
+		float: left;
+		.info__pic {
+			float: left;
+			margin-right: 20px;
+			.square(60px);
+			.pic {
+				border: 2px solid #fff;
+				.square(100%);
+				.border-radius(50%);
+			}
+		}
+		.info__name {
+			.name {
+				color: #fff;
+				font-size: 21px;
+				margin: 0;
+				padding: 0;
+			}
+			.mail {
+				color: rgba(255,255,255,.7);
+			}
+		}		
+	}
+	.soc-icons {
+		float: right;
+		width: 50%;
+		text-align: right;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-ms-align-items: center;
+		align-items: center;
+		-webkit-justify-content: flex-end;
+		-moz-justify-content: flex-end;
+		-ms-justify-content: flex-end;
+		-o-justify-content: flex-end;
+		justify-content: flex-end;
+		.icons__item {
+			display: inline-block;
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+			.icons__link {
+				display: block;
+				vertical-align: middle;
+				.square(30px);
+				svg {
+					vertical-align: middle;
+					* {
+						fill: rgba(255,255,255,.7);
+						transition: fill .3s;
+					}
+				}
+				&:hover {
+					svg * {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*------- Main --------*/
+main {
+	margin-bottom: 80px;
+	.about-student {
+		.container(960px);
+		.about__title {
+			text-align: center;
+			.about__title-text {
+				font-family: 'FiraSansMedium';
+				font-size: 42px;
+				font-weight: normal;
+				color: #212121;
+				margin: 0;
+				margin-bottom: 30px;
+			}
+			.about__title-text2 {
+				font-family: 'FiraSansLight';
+				font-size: 21px;
+				color: #727272;
+				margin: 0;
+			}
+		}
+		.about__desc {			
+			.about__me {
+				padding-right: 20px;
+				.clearfix();
+				.about__me-pic {
+					width: 140px;		
+					float: left;		
+					margin-right: 20px;	
+				}
+				.about__me-text {
+					.about__me-title {
+						font-family: 'FiraSansReg';
+						font-size: 21px;
+						font-weight: normal;
+						color: #212121;
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+					.about__me-text {
+						font-family: 'FiraSansLight';
+						font-size: 14px;
+						font-weight: normal;
+						line-height: 1.6;
+						color: #727272;
+						.about__me-text_link {
+							color: #29b0f5;
+						}
+					}
+				}
+			}
+		}
+	}
+	.courses {
+		background: url('../img/gplaypattern.png');
+		.container {
+			.container(960px);
+		}
+		.course {	
+			text-align: center;
+			margin-bottom: 25px;		
+			a {
+				background: #fff;
+				box-shadow: 0 3px 3px 1px #dadbd8;
+				display: block;
+				text-decoration: none;
+				.course__img {
+					transition: .2s;
+					width: 300px;
+					overflow: hidden;
+				}
+				.course__desc {
+					text-align: left;
+					padding: 20px 24px 0 20px;
+					.desc__title {
+						margin-top: 0;
+						transition: .2s;
+						font-family: 'FiraSansReg';
+						font-size: 21px;
+						text-decoration: none;
+						color: #212121;
+					}
+					.desc__text {						
+						font-family: 'FiraSansLight';
+						font-size: 14px;
+						color: #727272;
+						line-height: 1.6;
+					}					
+				}
+				.check {
+					text-align: left;
+					padding: 20px;
+					background: #f6f7f2;
+					input {
+						margin: 0;
+					}
+				}
+				&:hover {
+					.course__img {
+						box-shadow: inset 0 -5px #8cc34b;
+					}
+					.course__desc {
+						.desc__title {
+							font-family: 'FiraSansReg';
+							font-size: 21px;
+							text-decoration: none;
+							color: #8cc34b;
+						}
+						.desc__text {
+							font-family: 'FiraSansLight';
+							font-size: 14px;
+							color: #727272;
+						}
+					}
+				}
+			}
+		}
+		.course__title {
+			text-align: center;
+			.title_top {
+				font-family: 'FiraSansMedium';
+				font-size: 42px;
+				color: #212121;
+			}
+			.title__bottom {
+				font-family: 'FiraSansLight';
+				font-size: 21px;
+				color: #727272;
+			}
+		}
+	}
+}
+
+/*------ Footer -------*/
+
+.footer(72px);
+
+.footer {
+	font-family: 'FiraSansReg';
+	font-size: 14px;
+	background: #212121;
+	color: rgba(255,255,255, .5);
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.container {
+		.desc {
+			line-height: 1.5;
+		}
+	}
+}

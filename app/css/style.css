@@ -1,0 +1,425 @@
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+.col-1 {
+  float: left;
+  width: 8.33333333%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-2 {
+  float: left;
+  width: 16.66666667%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-3 {
+  float: left;
+  width: 25%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-4 {
+  float: left;
+  width: 33.33333333%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-5 {
+  float: left;
+  width: 41.66666667%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-6 {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-7 {
+  float: left;
+  width: 58.33333333%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-8 {
+  float: left;
+  width: 66.66666667%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-9 {
+  float: left;
+  width: 75%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-10 {
+  float: left;
+  width: 83.33333333%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-11 {
+  float: left;
+  width: 91.66666667%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-12 {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@font-face {
+  font-family: FiraSansReg;
+  src: url('../fonts/FiraSans/FiraSans-Regular.ttf');
+}
+@font-face {
+  font-family: FiraSansMedium;
+  src: url('../fonts/FiraSans/FiraSans-Medium.ttf');
+}
+@font-face {
+  font-family: FiraSansLight;
+  src: url('../fonts/FiraSans/FiraSans-Light.ttf');
+}
+@font-face {
+  font-family: FontAwesome;
+  src: url('../fonts/FontAwesome/fontawesome-webfont.ttf');
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+.container:after {
+  clear: both;
+}
+.wrapper {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+  height: 72px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*------ Header -------*/
+.header {
+  padding: 14px 0;
+  box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 70px;
+  background: #8cc34b;
+}
+.header .container {
+  padding-left: 29px;
+  padding-right: 29px;
+}
+.header .container:before,
+.header .container:after {
+  content: " ";
+  display: table;
+}
+.header .container:after {
+  clear: both;
+}
+.header .info {
+  width: 50%;
+  float: left;
+}
+.header .info .info__pic {
+  float: left;
+  margin-right: 20px;
+  height: 60px;
+  width: 60px;
+}
+.header .info .info__pic .pic {
+  border: 2px solid #fff;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.header .info .info__name .name {
+  color: #fff;
+  font-size: 21px;
+  margin: 0;
+  padding: 0;
+}
+.header .info .info__name .mail {
+  color: rgba(255, 255, 255, 0.7);
+}
+.header .soc-icons {
+  float: right;
+  width: 50%;
+  text-align: right;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.header .soc-icons .icons__item {
+  display: inline-block;
+}
+.header .soc-icons .icons__item:not(:last-child) {
+  margin-right: 20px;
+}
+.header .soc-icons .icons__item .icons__link {
+  display: block;
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+}
+.header .soc-icons .icons__item .icons__link svg {
+  vertical-align: middle;
+}
+.header .soc-icons .icons__item .icons__link svg * {
+  fill: rgba(255, 255, 255, 0.7);
+  transition: fill .3s;
+}
+.header .soc-icons .icons__item .icons__link:hover svg * {
+  fill: #fff;
+}
+/*------- Main --------*/
+main {
+  margin-bottom: 80px;
+}
+main .about-student {
+  width: 960px;
+  margin: 0 auto;
+}
+main .about-student:before,
+main .about-student:after {
+  display: table;
+  content: " ";
+}
+main .about-student:after {
+  clear: both;
+}
+main .about-student .about__title {
+  text-align: center;
+}
+main .about-student .about__title .about__title-text {
+  font-family: 'FiraSansMedium';
+  font-size: 42px;
+  font-weight: normal;
+  color: #212121;
+  margin: 0;
+  margin-bottom: 30px;
+}
+main .about-student .about__title .about__title-text2 {
+  font-family: 'FiraSansLight';
+  font-size: 21px;
+  color: #727272;
+  margin: 0;
+}
+main .about-student .about__desc .about__me {
+  padding-right: 20px;
+}
+main .about-student .about__desc .about__me:before,
+main .about-student .about__desc .about__me:after {
+  content: " ";
+  display: table;
+}
+main .about-student .about__desc .about__me:after {
+  clear: both;
+}
+main .about-student .about__desc .about__me .about__me-pic {
+  width: 140px;
+  float: left;
+  margin-right: 20px;
+}
+main .about-student .about__desc .about__me .about__me-text .about__me-title {
+  font-family: 'FiraSansReg';
+  font-size: 21px;
+  font-weight: normal;
+  color: #212121;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+main .about-student .about__desc .about__me .about__me-text .about__me-text {
+  font-family: 'FiraSansLight';
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #727272;
+}
+main .about-student .about__desc .about__me .about__me-text .about__me-text .about__me-text_link {
+  color: #29b0f5;
+}
+main .courses {
+  background: url('../img/gplaypattern.png');
+}
+main .courses .container {
+  width: 960px;
+  margin: 0 auto;
+}
+main .courses .container:before,
+main .courses .container:after {
+  display: table;
+  content: " ";
+}
+main .courses .container:after {
+  clear: both;
+}
+main .courses .course {
+  text-align: center;
+  margin-bottom: 25px;
+}
+main .courses .course a {
+  background: #fff;
+  box-shadow: 0 3px 3px 1px #dadbd8;
+  display: block;
+  text-decoration: none;
+}
+main .courses .course a .course__img {
+  transition: .2s;
+  width: 300px;
+  overflow: hidden;
+}
+main .courses .course a .course__desc {
+  text-align: left;
+  padding: 20px 24px 0 20px;
+}
+main .courses .course a .course__desc .desc__title {
+  margin-top: 0;
+  transition: .2s;
+  font-family: 'FiraSansReg';
+  font-size: 21px;
+  text-decoration: none;
+  color: #212121;
+}
+main .courses .course a .course__desc .desc__text {
+  font-family: 'FiraSansLight';
+  font-size: 14px;
+  color: #727272;
+  line-height: 1.6;
+}
+main .courses .course a .check {
+  text-align: left;
+  padding: 20px;
+  background: #f6f7f2;
+}
+main .courses .course a .check input {
+  margin: 0;
+}
+main .courses .course a:hover .course__img {
+  box-shadow: inset 0 -5px #8cc34b;
+}
+main .courses .course a:hover .course__desc .desc__title {
+  font-family: 'FiraSansReg';
+  font-size: 21px;
+  text-decoration: none;
+  color: #8cc34b;
+}
+main .courses .course a:hover .course__desc .desc__text {
+  font-family: 'FiraSansLight';
+  font-size: 14px;
+  color: #727272;
+}
+main .courses .course__title {
+  text-align: center;
+}
+main .courses .course__title .title_top {
+  font-family: 'FiraSansMedium';
+  font-size: 42px;
+  color: #212121;
+}
+main .courses .course__title .title__bottom {
+  font-family: 'FiraSansLight';
+  font-size: 21px;
+  color: #727272;
+}
+/*------ Footer -------*/
+.footer {
+  height: 72px;
+  margin-top: -72px;
+  position: relative;
+}
+.footer {
+  font-family: 'FiraSansReg';
+  font-size: 14px;
+  background: #212121;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer .container .desc {
+  line-height: 1.5;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "LStest",
+  "authors": [
+    "Alexey Zavalin"
+  ],
+  "description": "Тест для продвинутого курса веб-разработки от LoftSchool",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}
