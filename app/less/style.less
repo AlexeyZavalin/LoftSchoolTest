@@ -157,18 +157,21 @@ p {
 	box-shadow: 0 5px 3px 0 rgba(0,0,0,.2);
 	margin-bottom: 70px;
 	.container {
-		padding-left: 29px;
-		padding-right: 29px;
-		.clearfix();
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 25px;
+		&:before, &:after {
+			content: none;
+		}
 	}
 	background: #8cc34b;
 	.info {
-		width: 50%;
-		float: left;
+		display: flex;
+		align-items: center;
 		.info__pic {
-			float: left;
-			margin-right: 20px;
 			.square(60px);
+			margin-right: 20px;
 			.pic {
 				border: 2px solid #fff;
 				.square(100%);
@@ -188,9 +191,6 @@ p {
 		}		
 	}
 	.soc-icons {
-		float: right;
-		width: 50%;
-		text-align: right;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
@@ -276,8 +276,34 @@ main {
 		}
 	}
 	.courses {
+		.course {
+			transition: .5s;
+		}
+		position: relative;
 		background: url('../img/gplaypattern.png');
 		padding-bottom: 80px;
+		.complete {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: flex;
+			justify-content: center;
+			margin-left: -221px;
+			margin-top: -24px;
+			svg {
+				.square(42px);
+				* {
+					fill: #8cc34b;
+				}
+			}
+			.complete__title {
+				color: #8cc34b;
+				font-family: 'FiraSansMedium';
+				font-size: 42px;
+				font-weight: normal;
+				margin: 0;
+			}
+		}
 		.container {
 			.container(960px);
 		}

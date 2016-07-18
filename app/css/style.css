@@ -152,26 +152,23 @@ p {
   background: #8cc34b;
 }
 .header .container {
-  padding-left: 29px;
-  padding-right: 29px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
 }
 .header .container:before,
 .header .container:after {
-  content: " ";
-  display: table;
-}
-.header .container:after {
-  clear: both;
+  content: none;
 }
 .header .info {
-  width: 50%;
-  float: left;
+  display: flex;
+  align-items: center;
 }
 .header .info .info__pic {
-  float: left;
-  margin-right: 20px;
   height: 60px;
   width: 60px;
+  margin-right: 20px;
 }
 .header .info .info__pic .pic {
   border: 2px solid #fff;
@@ -193,9 +190,6 @@ p {
   color: rgba(255, 255, 255, 0.7);
 }
 .header .soc-icons {
-  float: right;
-  width: 50%;
-  text-align: right;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -291,8 +285,35 @@ main .about-student .about__desc .about__me .about__me-text .about__me-text .abo
   color: #29b0f5;
 }
 main .courses {
+  position: relative;
   background: url('../img/gplaypattern.png');
   padding-bottom: 80px;
+}
+main .courses .course {
+  transition: .5s;
+}
+main .courses .complete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  margin-left: -221px;
+  margin-top: -24px;
+}
+main .courses .complete svg {
+  height: 42px;
+  width: 42px;
+}
+main .courses .complete svg * {
+  fill: #8cc34b;
+}
+main .courses .complete .complete__title {
+  color: #8cc34b;
+  font-family: 'FiraSansMedium';
+  font-size: 42px;
+  font-weight: normal;
+  margin: 0;
 }
 main .courses .container {
   width: 960px;
