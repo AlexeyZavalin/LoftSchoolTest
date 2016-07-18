@@ -290,7 +290,7 @@ main .courses {
   padding-bottom: 80px;
 }
 main .courses .course {
-  transition: .5s;
+  transition: 1.6s;
 }
 main .courses .complete {
   position: absolute;
