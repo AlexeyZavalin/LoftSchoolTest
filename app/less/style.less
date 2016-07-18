@@ -29,31 +29,40 @@
 	}
 }
 
-.row {	
-	margin-right: -15px;
-	margin-left: -15px;
-	&:before, &:after {
-		display: table;
-		content: " ";
-	}
-	&:after {
-		clear: both;
+.row() {
+	&.row {	
+		margin-right: -10px;
+		margin-left: -10px;
+		&:before, &:after {
+			display: table;
+			content: " ";
+		}
+		&:after {
+			clear: both;
+		}
 	}
 }
 
-.grid(@name, @current, @amount) when (@current < @amount + 1) {
-	&.@{name}-@{current} {
+.columns(@current, @amount) when (@current < @amount + 1) {
+	&.col-@{current} {
 		float: left;
-		width: 100%/@amount*@current;
-		position: relative;
-		min-height: 1px;		
-		padding-right: 15px;
-		padding-left: 15px;
+		width: 100%/@amount*@current;	
+		padding-right: 10px;
+		padding-left: 10px;
 	}
-	.grid(@name, @current + 1, @amount);
+	.columns(@current + 1, @amount);
 }
 
-.grid(col, 1, 12);
+.cols(@amount) when (@amount > 0) {
+	.columns(@amount - @amount + 1, @amount);
+}
+
+.grid(@amount) {
+	.row();
+	.cols(@amount);
+}
+
+.grid(12);
 
 .border-radius(@value) {
 	-webkit-border-radius: @value;
@@ -182,17 +191,8 @@ p {
 		float: right;
 		width: 50%;
 		text-align: right;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
 		display: flex;
-		-ms-align-items: center;
 		align-items: center;
-		-webkit-justify-content: flex-end;
-		-moz-justify-content: flex-end;
-		-ms-justify-content: flex-end;
-		-o-justify-content: flex-end;
 		justify-content: flex-end;
 		.icons__item {
 			display: inline-block;
@@ -222,18 +222,18 @@ p {
 
 /*------- Main --------*/
 main {
-	margin-bottom: 80px;
-	.about-student {
+	.about-student {		
 		.container(960px);
 		.about__title {
 			text-align: center;
+			margin-bottom: 45px;
 			.about__title-text {
 				font-family: 'FiraSansMedium';
 				font-size: 42px;
 				font-weight: normal;
 				color: #212121;
 				margin: 0;
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 			}
 			.about__title-text2 {
 				font-family: 'FiraSansLight';
@@ -242,7 +242,8 @@ main {
 				margin: 0;
 			}
 		}
-		.about__desc {			
+		.about__desc {	
+			margin-bottom: 75px;		
 			.about__me {
 				padding-right: 20px;
 				.clearfix();
@@ -258,7 +259,7 @@ main {
 						font-weight: normal;
 						color: #212121;
 						margin-top: 0;
-						margin-bottom: 0;
+						margin-bottom: 20px;
 					}
 					.about__me-text {
 						font-family: 'FiraSansLight';
@@ -276,8 +277,22 @@ main {
 	}
 	.courses {
 		background: url('../img/gplaypattern.png');
+		padding-bottom: 80px;
 		.container {
 			.container(960px);
+		}
+		.course__title {
+			.title__top {
+				margin-top: 80px;
+				font-size: 42px;
+				font-family: 'FiraSansMedium';
+				font-weight: normal;
+			}
+			.title__bottom {
+				margin: 20px 0 50px 0;
+				font-size: 21px;
+				font-family: 'FiraSansLight';
+			}
 		}
 		.course {	
 			text-align: center;
@@ -287,6 +302,7 @@ main {
 				box-shadow: 0 3px 3px 1px #dadbd8;
 				display: block;
 				text-decoration: none;
+				transition: .2s;
 				.course__img {
 					transition: .2s;
 					width: 300px;
@@ -312,10 +328,40 @@ main {
 				}
 				.check {
 					text-align: left;
-					padding: 20px;
 					background: #f6f7f2;
 					input {
 						margin: 0;
+					}
+					input[type="checkbox"] {
+						display: none;
+						&:checked ~ label {
+							color: #acd27d;
+							&:before {
+								background: url('../img/courses/checked.png');
+								.square(20px);
+								border: none;
+							}
+						}
+					}
+					label {
+						position: relative;
+						cursor: pointer;
+						font-family: 'FiraSansReg';
+						font-size: 18px;
+						color: #727272;
+						padding: 20px 60px;
+						display: block;
+						transition: .15s;
+						&:before {
+							position: absolute;
+							content: " ";
+							.square(16px);
+							border: 2px solid #b6b6b6;
+							left: 20px;
+							background: #fff;
+							display: block;
+							transition: .15s;
+						}
 					}
 				}
 				&:hover {
@@ -335,6 +381,20 @@ main {
 							color: #727272;
 						}
 					}
+				}
+			}
+			.checked {
+				background: #ecf3e2;
+				.course__desc {
+					.desc__title {
+						color: #6f7665;
+					}
+					.desc__text {
+						color: #727272;
+					}
+				}
+				.check {
+					background: #e8f0db;
 				}
 			}
 		}
