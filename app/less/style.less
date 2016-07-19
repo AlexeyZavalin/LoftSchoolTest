@@ -18,7 +18,7 @@
 }
 
 .container(@width) {
-	width: @width;
+	max-width: @width;
 	margin: 0 auto;
 	&:before, &:after {
 		display: table;
@@ -171,6 +171,7 @@ p {
 		align-items: center;
 		.info__pic {
 			.square(60px);
+			flex-basis: 60px;
 			margin-right: 20px;
 			.pic {
 				border: 2px solid #fff;
@@ -205,6 +206,7 @@ p {
 				.square(30px);
 				svg {
 					vertical-align: middle;
+					.square(30px);
 					* {
 						fill: rgba(255,255,255,.7);
 						transition: fill .3s;
@@ -243,14 +245,17 @@ main {
 			}
 		}
 		.about__desc {	
-			margin-bottom: 75px;		
+			margin-bottom: 75px;	
+			display: flex;
+			justify-content: space-between;
 			.about__me {
+				flex-grow: 1;
 				padding-right: 20px;
+				display: flex;
 				.clearfix();
 				.about__me-pic {
 					width: 140px;		
-					float: left;		
-					margin-right: 20px;	
+					margin-right: 20px;
 				}
 				.about__me-text {
 					.about__me-title {
@@ -276,9 +281,6 @@ main {
 		}
 	}
 	.courses {
-		.course {
-			transition: 1.6s;
-		}
 		position: relative;
 		background: url('../img/gplaypattern.png');
 		padding-bottom: 80px;
@@ -320,7 +322,14 @@ main {
 				font-family: 'FiraSansLight';
 			}
 		}
-		.course {	
+		.courses__list {			
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		.course {
+			margin-right: 20px;
+			width: 300px;	
 			text-align: center;
 			margin-bottom: 25px;		
 			a {
@@ -328,11 +337,15 @@ main {
 				box-shadow: 0 3px 3px 1px #dadbd8;
 				display: block;
 				text-decoration: none;
-				transition: .2s;
+				transition: .3s;
 				.course__img {
 					transition: .2s;
-					width: 300px;
+					max-width: 300px;
 					overflow: hidden;
+					img {
+						width: 100%;
+						height: auto;
+					}
 				}
 				.course__desc {
 					text-align: left;
